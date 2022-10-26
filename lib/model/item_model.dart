@@ -1,16 +1,16 @@
 class ItemModel {
-  String? sId;
+  String? id;
   String? idCategory;
   String? idSaller;
   String? name;
-  String? price;
+  double? price;
   SaleLimitQuantity? saleLimitQuantity;
-  String? enable;
+  bool? enable;
   String? createdAt;
   String? updateAt;
 
   ItemModel(
-      {this.sId,
+      {this.id,
       this.idCategory,
       this.idSaller,
       this.name,
@@ -21,7 +21,7 @@ class ItemModel {
       this.updateAt});
 
   ItemModel.fromJson(Map<String, dynamic> json) {
-    sId = json['_id'];
+    id = json['_id'];
     idCategory = json['idCategory'];
     idSaller = json['idSaller'];
     name = json['name'];
@@ -36,7 +36,7 @@ class ItemModel {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data =  Map<String, dynamic>();
-    data['_id'] = sId;
+    data['_id'] = id;
     data['idCategory'] = idCategory;
     data['idSaller'] = idSaller;
     data['name'] = name;
@@ -52,8 +52,8 @@ class ItemModel {
 }
 
 class SaleLimitQuantity {
-  String? maximum;
-  String? minimum;
+  int? maximum;
+  int? minimum;
 
   SaleLimitQuantity({this.maximum, this.minimum});
 
