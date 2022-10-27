@@ -1,52 +1,48 @@
 class ItemModel {
   String? id;
   String? idCategory;
+  String? image;
   String? idSaller;
   String? name;
   double? price;
   SaleLimitQuantity? saleLimitQuantity;
   bool? enable;
-  String? createdAt;
-  String? updateAt;
 
   ItemModel(
       {this.id,
       this.idCategory,
+      this.image,
       this.idSaller,
       this.name,
       this.price,
       this.saleLimitQuantity,
-      this.enable,
-      this.createdAt,
-      this.updateAt});
+      this.enable});
 
   ItemModel.fromJson(Map<String, dynamic> json) {
-    id = json['_id'];
+    id = json['id'];
     idCategory = json['idCategory'];
+    image = json['image'];
     idSaller = json['idSaller'];
     name = json['name'];
     price = json['price'];
     saleLimitQuantity = json['saleLimitQuantity'] != null
-        ?  SaleLimitQuantity.fromJson(json['saleLimitQuantity'])
+        ? new SaleLimitQuantity.fromJson(json['saleLimitQuantity'])
         : null;
     enable = json['enable'];
-    createdAt = json['createdAt'];
-    updateAt = json['updateAt'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
-    data['_id'] = id;
-    data['idCategory'] = idCategory;
-    data['idSaller'] = idSaller;
-    data['name'] = name;
-    data['price'] = price;
-    if (saleLimitQuantity != null) {
-      data['saleLimitQuantity'] = saleLimitQuantity!.toJson();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['idCategory'] = this.idCategory;
+    data['image'] = this.image;
+    data['idSaller'] = this.idSaller;
+    data['name'] = this.name;
+    data['price'] = this.price;
+    if (this.saleLimitQuantity != null) {
+      data['saleLimitQuantity'] = this.saleLimitQuantity!.toJson();
     }
-    data['enable'] = enable;
-    data['createdAt'] = createdAt;
-    data['updateAt'] = updateAt;
+    data['enable'] = this.enable;
     return data;
   }
 }
@@ -63,9 +59,9 @@ class SaleLimitQuantity {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
-    data['maximum'] = maximum;
-    data['minimum'] = minimum;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['maximum'] = this.maximum;
+    data['minimum'] = this.minimum;
     return data;
   }
 }

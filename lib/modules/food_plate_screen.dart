@@ -1,45 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:selfserviceapp/database/mock.dart';
+import 'package:selfserviceapp/model/item_model.dart';
 
 import '../components/drop-down.dart';
-import 'dart:math' as math;
 
-class FoodPlatescreen extends StatefulWidget {
-  const FoodPlatescreen({Key? key}) : super(key: key);
+class FoodPlateScreen extends StatefulWidget {
+  const FoodPlateScreen({Key? key}) : super(key: key);
 
   @override
-  State<FoodPlatescreen> createState() => _FoodPlatescreenState();
+  State<FoodPlateScreen> createState() => _FoodPlateScreenState();
 }
 
-class _FoodPlatescreenState extends State<FoodPlatescreen> {
-  List iten = [
-    'assets/copo-de-agua.png',
-    'assets/carne.png',
-    'assets/red-beans.png',
-  ];
-  List iten2 = [
-    'assets/copo-de-agua.png',
-    'assets/carne.png',
-    'assets/red-beans.png',
-    'assets/arroz.png',
-    'assets/peixe.png',
-    'assets/copo-de-agua.png',
-    'assets/carne.png',
-    'assets/red-beans.png',
-    'assets/arroz.png',
-    'assets/peixe.png',
-    'assets/copo-de-agua.png',
-    'assets/carne.png',
-    'assets/red-beans.png',
-    'assets/arroz.png',
-    'assets/peixe.png',
-    'assets/copo-de-agua.png',
-    'assets/carne.png',
-    'assets/red-beans.png',
-    'assets/arroz.png',
-    'assets/peixe.png'
-  ];
+class _FoodPlateScreenState extends State<FoodPlateScreen> {
+List<ItemModel> itens = [];
 
-  Widget itens() {
+ List<ItemModel> getItens(){
+  return itensMock;
+ }
+
+
+  Widget generateItens(List<ItemModel> itens) {
     return Container(
       height: 110,
       color: Colors.grey,
@@ -47,22 +27,29 @@ class _FoodPlatescreenState extends State<FoodPlatescreen> {
           physics: const BouncingScrollPhysics(
               parent: AlwaysScrollableScrollPhysics()),
           scrollDirection: Axis.horizontal,
-          itemCount: iten.length,
+          itemCount: itens.length,
           itemBuilder: (context, i) {
             return Card(
               child: Column(
                 children: [
                   Image.asset(
-                    iten[i],
+                    itens[i].image!,
                     height: 80,
                     fit: BoxFit.fitHeight,
                   ),
-                  Text("Frango")
+                  Text(itens[i].name!)
                 ],
               ),
             );
           }),
     );
+  }
+
+  @override
+  void initState() {
+    itens = getItens();
+    print(itens);
+    super.initState();
   }
 
   @override
@@ -79,7 +66,7 @@ class _FoodPlatescreenState extends State<FoodPlatescreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Divider(
+          const Divider(
             height: 50,
           ),
           RotatedBox(
@@ -100,7 +87,7 @@ class _FoodPlatescreenState extends State<FoodPlatescreen> {
                         childAspectRatio: 1,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10),
-                    itemCount: iten.length,
+                    itemCount:itens.length,
                     itemBuilder: (BuildContext ctx, index) {
                       return RotatedBox(
                         quarterTurns: -2,
@@ -108,7 +95,7 @@ class _FoodPlatescreenState extends State<FoodPlatescreen> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5)),
-                          child: Image.asset(iten[index]),
+                          child: Image.asset(itens[index].image!),
                         ),
                       );
                     }),
@@ -123,13 +110,13 @@ class _FoodPlatescreenState extends State<FoodPlatescreen> {
                 fit: BoxFit.fitWidth,
               )),
           const DropdownButtonExample(),
-          itens(),
+          generateItens(itens),
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           setState(() {
-            iten.add('assets/arroz.png');
+            //itens.add('assets/arroz.png');
           });
         },
         icon: const Icon(Icons.check),
