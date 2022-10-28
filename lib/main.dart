@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'modules/food_plate_screen.dart';
+import 'modules/food_plate_screen/food_plate_screen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,6 @@
 import 'package:selfserviceapp/model/item_model.dart';
 
-List<ItemModel> itensMock = [
+List<ItemModel> itemsMock = [
   ItemModel.fromJson({
     "id": "12345",
     "idCategory": "123",
