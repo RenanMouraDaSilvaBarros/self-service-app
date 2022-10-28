@@ -12,12 +12,12 @@ class FoodPlateScreen extends StatefulWidget {
 }
 
 class _FoodPlateScreenState extends State<FoodPlateScreen> {
-List<ItemModel> itens = [];
+  List<ItemModel> itens = [];
+  List<ItemModel> plate = [];
 
- List<ItemModel> getItens(){
-  return itensMock;
- }
-
+  List<ItemModel> getItens() {
+    return itensMock;
+  }
 
   Widget generateItens(List<ItemModel> itens) {
     return Container(
@@ -29,26 +29,48 @@ List<ItemModel> itens = [];
           scrollDirection: Axis.horizontal,
           itemCount: itens.length,
           itemBuilder: (context, i) {
-            return Card(
-              child: Column(
-                children: [
-                  Image.asset(
-                    itens[i].image!,
-                    height: 80,
-                    fit: BoxFit.fitHeight,
-                  ),
-                  Text(itens[i].name!)
-                ],
+            return GestureDetector(
+              onTap: () => setState(() {
+                plate.add(itens[i]);
+              }),
+              child: Card(
+                child: Column(
+                  children: [
+                    Image.asset(
+                      itens[i].image!,
+                      height: 80,
+                      fit: BoxFit.fitHeight,
+                    ),
+                    Text(itens[i].name!)
+                  ],
+                ),
               ),
             );
           }),
     );
   }
 
+  itenPlate(ItemModel itenPlate, int index) {
+    return RotatedBox(
+      quarterTurns: -2,
+      child: GestureDetector(
+        onLongPress: () {
+          setState(() {
+            plate.removeAt(index);
+          });
+        },
+        child: Container(
+          alignment: Alignment.center,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
+          child: Image.asset(itenPlate.image!),
+        ),
+      ),
+    );
+  }
+
   @override
   void initState() {
     itens = getItens();
-    print(itens);
     super.initState();
   }
 
@@ -87,17 +109,9 @@ List<ItemModel> itens = [];
                         childAspectRatio: 1,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10),
-                    itemCount:itens.length,
+                    itemCount: plate.length,
                     itemBuilder: (BuildContext ctx, index) {
-                      return RotatedBox(
-                        quarterTurns: -2,
-                        child: Container(
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Image.asset(itens[index].image!),
-                        ),
-                      );
+                      return itenPlate(plate[index], index);
                     }),
               ),
             ),
@@ -116,7 +130,7 @@ List<ItemModel> itens = [];
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           setState(() {
-            //itens.add('assets/arroz.png');
+            //plate.add('assets/arroz.png');
           });
         },
         icon: const Icon(Icons.check),
