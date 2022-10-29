@@ -105,6 +105,7 @@ class _FoodPlateScreenState extends State<FoodPlateScreen> {
           StreamBuilder<List<ItemModel>>(
               stream: itemBloc.output,
               builder: (context, snapshot) {
+                print('renderizando');
                 return RotatedBox(
                   quarterTurns: -2,
                   child: Container(

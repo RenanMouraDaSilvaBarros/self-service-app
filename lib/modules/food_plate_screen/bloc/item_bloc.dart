@@ -21,6 +21,7 @@ class ItemBloc {
   }
 
   removeItem({int? index}) {
+    print('removendo');
     itensFoodPlate.removeAt(index!);
     input.add(itensFoodPlate);
   }

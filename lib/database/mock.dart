@@ -1,6 +1,94 @@
 import 'package:selfserviceapp/model/item_model.dart';
 
 List<ItemModel> itemsMock = [
+      ItemModel.fromJson({
+    "id": "12345",
+    "idCategory": "123",
+    "image": "assets/carne-moida.png",
+    "idSaller": "123",
+    "name": "ovo cozido",
+    "price": 2.0,
+    "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+    "enable": true
+  }),
+      ItemModel.fromJson({
+    "id": "12345",
+    "idCategory": "123",
+    "image": "assets/carne-moida.png",
+    "idSaller": "123",
+    "name": "carne moida",
+    "price": 2.0,
+    "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+    "enable": true
+  }),
+    ItemModel.fromJson({
+    "id": "12345",
+    "idCategory": "123",
+    "image": "assets/pernil-porco.png",
+    "idSaller": "123",
+    "name": "pernil",
+    "price": 2.0,
+    "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+    "enable": true
+  }),
+    ItemModel.fromJson({
+    "id": "12345",
+    "idCategory": "123",
+    "image": "assets/bisteca-porco.png",
+    "idSaller": "123",
+    "name": "bisteca",
+    "price": 2.0,
+    "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+    "enable": true
+  }),
+     ItemModel.fromJson({
+    "id": "12345",
+    "idCategory": "123",
+    "image": "assets/costela-porco.png",
+    "idSaller": "123",
+    "name": "costela",
+    "price": 2.0,
+    "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+    "enable": true
+  }),
+    ItemModel.fromJson({
+    "id": "12345",
+    "idCategory": "123",
+    "image": "assets/peixe-cozido.png",
+    "idSaller": "123",
+    "name": "peixe cozido",
+    "price": 2.0,
+    "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+    "enable": true
+  }),
+   ItemModel.fromJson({
+    "id": "12345",
+    "idCategory": "123",
+    "image": "assets/peixe-cozido.png",
+    "idSaller": "123",
+    "name": "peixe cozido",
+    "price": 2.0,
+    "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+    "enable": true
+  }),
+    ItemModel.fromJson({
+    "id": "12345",
+    "idCategory": "123",
+    "image": "assets/ovo-frito.png",
+    "idSaller": "123",
+    "name": "ovo frito",
+    "price": 2.0,
+    "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+    "enable": true
+  }),
   ItemModel.fromJson({
     "id": "12345",
     "idCategory": "123",
