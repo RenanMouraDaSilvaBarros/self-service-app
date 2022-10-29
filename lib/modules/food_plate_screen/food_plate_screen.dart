@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:selfserviceapp/components/alert.dart';
 import 'package:selfserviceapp/database/mock.dart';
 import 'package:selfserviceapp/model/item_model.dart';
 
 import '../../components/drop-down.dart';
 import 'bloc/item_bloc.dart';
+import 'package:selfserviceapp/components/alert.dart';
 
 class FoodPlateScreen extends StatefulWidget {
   const FoodPlateScreen({Key? key}) : super(key: key);
@@ -13,8 +15,6 @@ class FoodPlateScreen extends StatefulWidget {
 }
 
 class _FoodPlateScreenState extends State<FoodPlateScreen> {
-  List<ItemModel> items = [];
-  List<ItemModel> plate = [];
   ItemBloc itemBloc = ItemBloc();
 
   List<ItemModel> getItens() {
@@ -32,7 +32,10 @@ class _FoodPlateScreenState extends State<FoodPlateScreen> {
           itemCount: items!.length,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: () => itemBloc.addItem(item: items[index]),
+              onTap: () => alert(context, item: items[index], function: () {
+                itemBloc.addItem(item: items[index]);
+                Navigator.pop(context);
+              }),
               child: Card(
                 child: Column(
                   children: [

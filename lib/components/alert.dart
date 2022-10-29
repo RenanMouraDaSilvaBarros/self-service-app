@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:selfserviceapp/model/item_model.dart';
 
-excluirAlerta(BuildContext context,
-    {required String message, required Function excluir}) {
+alert(BuildContext context,
+    {required ItemModel item, required Function function}) {
   return showDialog(
       context: context,
       builder: (BuildContext context) => SimpleDialog(
@@ -13,40 +14,29 @@ excluirAlerta(BuildContext context,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      RichText(
-                        text: TextSpan(
-                            text: "Tem certeza que deseja excluir",
-                            style: TextStyle(fontSize: 20, color: Colors.black),
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: ' $message',
-                                  style: const TextStyle(
-                                      fontSize: 24,
-                                      fontStyle: FontStyle.italic,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.red)),
-                              const TextSpan(text: ' ?'),
-                            ]),
+                      Text(
+                        item.name!,
+                        style: const TextStyle(fontSize: 30),
                       ),
+                      Divider(),
+                      Text(item.description!),
                       Row(
                         children: [
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.red,
+                                primary: Colors.green,
                               ),
                               onPressed: () async {
-                                
-                                await excluir();
-                                
+                                await function();
                               },
-                              child: const Text("Sim")),
+                              child: const Text("Adicionar")),
                           const Expanded(child: Text("")),
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.red,
                               ),
                               onPressed: (() => Navigator.of(context).pop()),
-                              child: const Text("Não"))
+                              child: const Text("Sair"))
                         ],
                       ),
                     ],
