@@ -32,9 +32,11 @@ class _FoodPlateScreenState extends State<FoodPlateScreen> {
           itemCount: items!.length,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: () => alert(context, item: items[index], function: () {
-                itemBloc.addItem(item: items[index]);
-                Navigator.pop(context);
+              onTap: () => alert(context,
+                  message: items[index].description!,
+                  title: items[index].name!, onConfirmed: () {
+                    itemBloc.addItem(item: items[index]);
+                    Navigator.pop(context);
               }),
               child: Card(
                 child: Column(

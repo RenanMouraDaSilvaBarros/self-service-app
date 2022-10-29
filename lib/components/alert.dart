@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:selfserviceapp/model/item_model.dart';
 
 alert(BuildContext context,
-    {required ItemModel item, required Function function}) {
+    {required String title, required String message, required Function onConfirmed}) {
   return showDialog(
       context: context,
       builder: (BuildContext context) => SimpleDialog(
@@ -15,11 +15,11 @@ alert(BuildContext context,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        item.name!,
+                        title,
                         style: const TextStyle(fontSize: 30),
                       ),
                       Divider(),
-                      Text(item.description!),
+                      Text(message),
                       Row(
                         children: [
                           ElevatedButton(
@@ -27,7 +27,7 @@ alert(BuildContext context,
                                 primary: Colors.green,
                               ),
                               onPressed: () async {
-                                await function();
+                                await onConfirmed();
                               },
                               child: const Text("Adicionar")),
                           const Expanded(child: Text("")),
