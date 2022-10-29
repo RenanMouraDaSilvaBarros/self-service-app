@@ -9,6 +9,7 @@ List<ItemModel> itemsMock = [
     "name": "arroz",
     "price": 2.0,
     "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'thuba thuba thuba thuba',
     "enable": true
   }),
   ItemModel.fromJson({
@@ -19,6 +20,7 @@ List<ItemModel> itemsMock = [
     "name": "carne",
     "price": 2.0,
     "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'thuba thuba thuba thuba',
     "enable": true
   }),
   ItemModel.fromJson({
@@ -29,6 +31,7 @@ List<ItemModel> itemsMock = [
     "name": "frango",
     "price": 3.0,
     "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'thuba thuba thuba thuba',
     "enable": true
   }),
   ItemModel.fromJson({
@@ -39,6 +42,7 @@ List<ItemModel> itemsMock = [
     "image": "assets/peixe.png",
     "price": 4.0,
     "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'thuba thuba thuba thuba',
     "enable": true
   }),
   ItemModel.fromJson({
@@ -49,6 +53,7 @@ List<ItemModel> itemsMock = [
     "image": "assets/limonada.png",
     "price": 4.0,
     "saleLimitQuantity": {"maximum": 2, "minimum": 0},
+    "description":'thuba thuba thuba thuba',
     "enable": true
   }),
 ];
